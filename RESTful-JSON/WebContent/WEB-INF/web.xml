@@ -14,15 +14,6 @@
 		<param-name>resteasy.scan</param-name>
 		<param-value>true</param-value>
 	</context-param>
-	
-	<context-param>
-		<param-name>resteasy.servlet.mapping.prefix</param-name>   <!-- Bunun anlami demek asagida /rest/* seklinde degilde /* kullaniyorsan bu context-param i sil-->
-		<param-value>/rest</param-value>
-	</context-param>            
-	
-	<listener>
-	<listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap </listener-class>         <!-- Bunuda silebilirsin bu Bootstrap anlaminda. -->
-	</listener>
 
 	<servlet>	
 		<servlet-name>resteasy-servlet</servlet-name>
@@ -31,6 +22,22 @@
 	
 	<servlet-mapping>
 		<servlet-name>resteasy-servlet</servlet-name>
-		<url-pattern>/rest/*</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
+	
+		
+<!-- 	<context-param>
+		<param-name>
+			resteasy.servlet.mapping.prefix
+		</param-name>   Bunun anlami demek asagida /rest/* 
+		seklinde degilde /* kullaniyorsan bu context-param i sil
+		<param-value>/rest</param-value>
+	</context-param>  
+	
+	<listener>
+	<listener-class>
+		org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap
+	</listener-class> Bunuda silebilirsin bu Bootstrap anlaminda.
+	</listener>
+	-->
 </web-app>
